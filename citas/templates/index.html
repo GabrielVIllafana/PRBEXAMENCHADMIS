@@ -1,0 +1,26 @@
+{% extends 'layout/base.html' %}
+{% block content %}
+    <h1>{{title}}</h1>
+    <a href="{% url 'citas' %}">Citas</a>
+    <form method="post">
+        {% csrf_token %}
+        {{form}}<br>
+        <label>Mascotas</label>
+        <div class="mascotas container">
+            {% for mascotas in mascotas %}
+                <label for="{{mascotas.id}}">
+                    <input type="radio" id="{{mascotas.id}}" name="mascota" value="{{mascotas.id}}"/> {{mascotas.nombre}} 
+                </label>
+            {% endfor %}
+        </div><br>
+        <label>Medicos</label>
+        <div class="medicos container">
+            {% for medicos in medicos %}
+                <label for="{{medicos.id}}">
+                    <input type="radio" id="{{medicos.id}}" name="medico" value="{{medicos.id}}"/> {{medicos.nombre}} 
+                </label>
+            {% endfor %}
+        </div>
+        <button>Enviar</button>
+    </form>
+{% endblock %}Citas
