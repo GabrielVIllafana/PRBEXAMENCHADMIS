@@ -1,0 +1,82 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    margin-bottom: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.options-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.mascotas-container,
+.medicos-container {
+    flex: 1;
+    margin: 10px;
+}
+
+.radioButton {
+    margin-right: 5px;
+}
+
+.submit-button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.submit-button:hover {
+    background-color: #2980b9;
+}
+
+.duenios-container,
+.mascotas-list,
+.citas-list {
+    list-style-type: circle;
+    padding-top: 5px;
+}
+
+details {
+    margin-bottom: 10px;
+}
+
+.info-container {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-top: 10px;
+}
