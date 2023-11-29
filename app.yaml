@@ -1,5 +1,5 @@
 runtime: python311
-entrypoint: gunicorn -b :$PORT main:app
+entrypoint: gunicorn -b :$PORT veterinaria.wsgi
 
 env_variables:
   # This setting is used in settings.py to configure your ALLOWED_HOSTS
