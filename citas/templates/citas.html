@@ -2,4 +2,36 @@
 {% block content %}
     <h1>{{title}}</h1>
     <a href="{% url 'principal' %}">Volver</a>
+    <div class="duenios container">
+        <details>
+            <summary>Dueños</summary>
+            <ul>
+                {% for duenios in duenios %}
+                    <details>
+                        <summary>{{duenios.nombre}}</summary>
+                        <ul>
+                            {% for mascotas in mascotas %}
+                                {% if mascotas.duenio.id == duenios.id %}
+                                    <details>
+                                        <summary>{{mascotas.nombre}}</summary>
+                                        <ul>
+                                            {% for citas in citas %}
+                                                {% if mascotas.id == citas.mascota_id %}
+                                                    <div class="info container">
+                                                        <h4>Info de Cita</h4>
+                                                        <p>Dia: {{citas.fecha}}  Hora: {{citas.hora}}</p>
+                                                        <p>Medico Asignado: {{citas.medico.nombre}} Especialidad: {{citas.medico.especialidad}}</p>
+                                                    </div>
+                                                {% endif %}
+                                            {% endfor %}
+                                        </ul>
+                                    </details>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </details>
+                {% endfor %}
+            </ul>
+        </details>
+    </div>
 {% endblock %}
