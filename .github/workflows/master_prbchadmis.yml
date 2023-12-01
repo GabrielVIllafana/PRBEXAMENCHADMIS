@@ -66,4 +66,4 @@ jobs:
         with:
           app-name: 'prbCHADmis'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_7C22500DADD6469D896906412213FEE3 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E8B2D8CE985246D89F1177107369F71E }}
