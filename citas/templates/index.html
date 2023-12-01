@@ -1,32 +1,44 @@
-{% extends 'layout/base.html' %}
-{% block content %}
-    <div class="container">
-        <h1>{{title}}</h1>
-        <nav>
-            <a href="{% url 'citas' %}">Citas</a>
-        </nav>
-        <form method="post">
-            {% csrf_token %}
-            {{form}}
-            <div class="options-container">
-                <div class="mascotas-container">
-                    <label>Mascotas: </label>
-                    {% for mascotas in mascotas %}
-                        <label for="{{mascotas.id}}">
-                            <input type="radio" id="{{mascotas.id}}" name="mascota" value="{{mascotas.id}}" class="radioButton"/> {{mascotas.nombre}} 
-                        </label>
-                    {% endfor %}
-                </div>
-            </div>
-            <div class="medicos-container">
-                <label>Medicos: </label>
-                {% for medicos in medicos %}
-                    <label for="{{medicos.id}}">
-                        <input type="radio" id="{{medicos.id}}" name="medico" value="{{medicos.id}}" class="radioButton"/> {{medicos.nombre}} 
-                    </label>
-                {% endfor %}
-            </div>
-            <button class="submit-button">Guardar</button>
-        </form>
+{% extends 'layout/base.html' %} {% block content %}
+<div class="container">
+  <h1>{{title}}</h1>
+  <nav>
+    <a href="{% url 'citas' %}">Citas</a>
+  </nav>
+  <form method="post">
+    {% csrf_token %} {{form}}
+    <div class="options-container">
+      <div class="mascotas-container">
+        <label>Mascotas: </label>
+        {% for mascotas in mascotas %}
+        <label for="{{mascotas.id}}">
+          <input
+            type="radio"
+            id="{{mascotas.id}}"
+            name="mascota"
+            value="{{mascotas.id}}"
+            class="radioButton"
+          />
+          {{mascotas.nombre}}
+        </label>
+        {% endfor %}
+      </div>
     </div>
+    <div class="medicos-container">
+      <label>Medicos: </label>
+      {% for medicos in medicos %}
+      <label for="{{medicos.id}}">
+        <input
+          type="radio"
+          id="{{medicos.id}}"
+          name="medico"
+          value="{{medicos.id}}"
+          class="radioButton"
+        />
+        {{medicos.nombre}}
+      </label>
+      {% endfor %}
+    </div>
+    <button class="submit-button">Guardar</button>
+  </form>
+</div>
 {% endblock %}Citas
